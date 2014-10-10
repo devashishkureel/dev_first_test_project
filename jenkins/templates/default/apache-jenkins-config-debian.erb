@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+ProxyPass / http://localhost:8080/ nocanon
+ProxyPassReverse / http://localhost:8080/
+ProxyRequests     Off
+
+<Proxy http://localhost:8080/*>
+  Order deny,allow
+  Allow from all
+</Proxy>
+</VirtualHost>
+http://ci.boomrat.com/view/All/
